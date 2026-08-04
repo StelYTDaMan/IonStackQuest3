@@ -499,12 +499,10 @@ def main():
 
 if errors:
     print("\n[!] Some symbols could not be resolved.")
-    print("    Continuing anyway and writing a partial configuration.")
     for e in errors:
         print(f"    - {e}")
 
-# Always succeed
-return 0
+# Don't exit with an error.
 
 
 if __name__ == "__main__":
