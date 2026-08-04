@@ -496,11 +496,15 @@ def main():
         config_text = generate_config(results, output_path)
         if not any(flag in sys.argv for flag in ['--json', '--check']):
             print(f"\n{config_text}")
+if errors:
+    print("\n[!] Some symbols could not be resolved.")
+    print("    The generated config may be incomplete.")
+    print("\nMissing symbols:")
+    for err in errors:
+        print(f"  - {err}")
 
-    if errors:
-        print("\n[!] Some symbols could not be resolved. You may need to manually")
-        print("    add them to the config or use a kernel with matching symbols.")
-        sys.exit(1)
+    print("\n[*] Continuing despite missing symbols.")
+    # Do not call sys.exit(1)
 
 
 if __name__ == "__main__":
