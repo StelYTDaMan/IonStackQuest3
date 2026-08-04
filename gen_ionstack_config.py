@@ -497,13 +497,15 @@ def main():
         if not any(flag in sys.argv for flag in ['--json', '--check']):
             print(f"\n{config_text}")
 
-if errors:
-    print("\n[!] Some symbols could not be resolved.")
-    for e in errors:
-        print(f"    - {e}")
+    # Report missing symbols, but do NOT fail.
+    if errors:
+        print("\n[!] Some symbols could not be resolved:")
+        for e in errors:
+            print(f"    - {e}")
 
-# Don't exit with an error.
+    # Always succeed.
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
