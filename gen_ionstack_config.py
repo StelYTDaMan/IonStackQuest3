@@ -343,18 +343,7 @@ def resolve_all(elf_path: str):
             "offset": offset,
             "method": method,
         }
-    print("\n========== DEBUG: ALL RESOLVED OFFSETS ==========")
 
-    for key, data in sorted(results.items()):
-        print(
-            f"{key:40s} "
-            f"addr=0x{data['addr']:016x} "
-            f"offset=0x{data['offset']:x} "
-            f"({data['method']})"
-        )
-
-    print("=================================================\n")
-    
     return results, warnings, errors
 
 
