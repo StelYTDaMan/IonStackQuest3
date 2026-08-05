@@ -9,7 +9,7 @@ on:
       base_address:
         description: 'kimage_text_base (ARM64 kernel base address)'
         required: false
-        default: '0xFFFFFFC008000000'
+        default: '0xffffff8008080000'
       boot_partition:
         description: 'Partition name in payload.bin (boot / init_boot)'
         required: false
