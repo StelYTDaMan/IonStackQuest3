@@ -139,7 +139,7 @@ RESOLVE_RULES = [
     },
     {
         "key": "selinux_blob_sizes_off",
-        "symbols": ["selinux_blob_sizes"],
+        "symbols": ["selinux_blob_sizes", "empty_zero_page"],
         "cfi_first": False,
     },
     {
